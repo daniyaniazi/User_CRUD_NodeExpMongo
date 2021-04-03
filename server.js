@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const morgan = require('morgan')
 const path = require('path')
 
+
 dotenv.config({
     path: 'config.env'
 })
@@ -22,10 +23,8 @@ app.use('/js', express.static(path.resolve(__dirname, 'assets/js')))
 app.use('/img', express.static(path.resolve(__dirname, 'assets/img')))
 
 
-app.get('/', (req, res) => {
-    res.send("Crud Application")
-})
-
+//load routes
+app.use('/', require('./server/routes/router'))
 
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
