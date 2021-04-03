@@ -15,7 +15,8 @@ app.use(morgan("tiny"))
 connectDB()
 
 //parse req 
-app.use(express.json())
+// app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
 
 //set view engine 
 app.set("view engine", "ejs")
