@@ -2,7 +2,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const path = require('path')
-
+const connectDB = require('./server/database/connection')
 
 dotenv.config({
     path: 'config.env'
@@ -10,6 +10,10 @@ dotenv.config({
 const app = express()
 //log request
 app.use(morgan("tiny"))
+
+//mongodb connection
+connectDB()
+
 //parse req 
 app.use(express.json())
 

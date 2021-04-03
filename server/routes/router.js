@@ -1,22 +1,15 @@
-
+const services = require('../services/render')
 const express = require('express')
 const route = express.Router()
-route.get('/', (req, res) => {
-    res.render("index")
-})
 
-route.get('/add_user', (req, res) => {
-    res.render("add_user")
-})
+/*
+@description root route
+@method : GET
+*/
+route.get('/', services.homeRoutes)
 
-route.get('/update_user', (req, res) => {
-    user = {
-        id: 2,
-        name: "daniya",
-        gender: "Female",
-        status: "Active"
-    }
-    res.render("update_user", { user: user })
-})
+route.get('/add_user', services.addUser)
+
+route.get('/update_user', services.updateUser)
 
 module.exports = route
