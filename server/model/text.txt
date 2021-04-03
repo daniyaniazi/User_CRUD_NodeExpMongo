@@ -1,0 +1,4 @@
+//here we work work with mongo db data
+- data validation
+-prcessing data
+- creating mongoose scheme

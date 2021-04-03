@@ -1,0 +1,3 @@
+deals with user request for resources from the server
+
+conatain diffrent functions that hoing to send resources to users
