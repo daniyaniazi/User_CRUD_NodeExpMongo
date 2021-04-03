@@ -17,6 +17,6 @@ var schema = new mongoose.Schema({
 })
 
 // name , shape
-const userdb = mongoose.model("userdb", schema)
+const Userdb = mongoose.model("userdb", schema)
 
-module.exports = userdb
+module.exports = Userdb
